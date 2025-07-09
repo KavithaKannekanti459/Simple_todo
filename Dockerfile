@@ -1,3 +1,3 @@
-FROM quay.io/redhattraining/httpd-parent:latest
+FROM quay.io/sclorg/httpd-24-micro-c9s
 
-COPY index.html /usr/local/apache2/htdocs/
+COPY index.html /var/www/html/index.html
