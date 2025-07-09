@@ -15,7 +15,8 @@ jobs:
           USER: ${{ secrets.USER }}
           REPOSITORY: ${{ secrets.REPOSITORY }}
           TOKEN: ${{ secrets.REPO_TOKEN }}
+          QUAY_USER: ${{ secrets.QUAY_USER }}
         run: |
           docker login -u "${USER}" -p "${TOKEN}" "${REPOSITORY}"
-          docker build -t "${REPOSITORY}/${USER}/simple-todo" .
-          docker push "${REPOSITORY}/${USER}/simple-todo"
+          docker build -t "${REPOSITORY}/${QUAY_USER}/simple-todo" .
+          docker push "${REPOSITORY}/${QUAY_USER}/simple-todo"
